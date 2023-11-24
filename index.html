@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Data Sender</title>
+</head>
+<body>
+    <script>
+        // 테스트 데이터
+        const testData1 = { title: '누군가의 특강' ,category: '특강', date:1104, link: '0000'};
+        const testData2 = { title: '전자공학부 특강' ,category: '특강', date:1117, link: '0000'};
+        const testData3 = { title: 'IT대 행사' ,category: '행사', date:1122, link: '0000'};
+        const testData4 = { title: '기말고사' ,category: '학사일정', date:1103, link: '0000'};
+        const testData5 = { title: 'aa' ,category: '특강', date:1104, link: '0000'};
+        const testData6 = { title: 'bb' ,category: '특강', date:1118, link: '0000'};
+        const testData7 = { title: 'cc' ,category: '행사', date:1118, link: '0000'};
+        const testData8 = { title: 'Dd' ,category: '학사일정', date:1105, link: '0000'};
+        const testData9 = { title: 'ee' ,category: '특강', date:1130, link: '0000'};
+        const testData10 = { title: 'ff' ,category: '특강', date:1130, link: '0000'};
+        const testData11 = { title: 'gg' ,category: '행사', date:1130, link: '0000'};
+        const testData12 = { title: 'hh' ,category: '학사일정', date:1103, link: '0000'};
+        const testData13 = { title: '네이버' ,category: '특강', date:1104, link: 'https://www.naver.com/'};
+        const testData14 = { title: '누군가 특강' ,category: '특강', date:1204, link: '0000'};
+        const testData15 = { title: '전 특강' ,category: '특강', date:1217, link: '0000'};
+        const testData16 = { title: 'I행사' ,category: '행사', date:1222, link: '0000'};
+        const testData17 = { title: '고사' ,category: '학사일정', date:1203, link: '0000'};
+        
+        
+
+        // API 엔드포인트
+        const apiUrl = 'http://localhost:8080/knu/receive';
+
+        // 함수를 통해 데이터 전송
+        function sendDataToSpring(data) {
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log('Response from server:', result);
+            })
+            .catch(error => {
+                console.error('Error sending data to server:', error);
+            });
+        }
+
+        // 데이터 전송
+        sendDataToSpring(testData1);
+        sendDataToSpring(testData2);
+        sendDataToSpring(testData3);
+        sendDataToSpring(testData4);
+        sendDataToSpring(testData5);
+        sendDataToSpring(testData6);
+        sendDataToSpring(testData7);
+        sendDataToSpring(testData8);
+        sendDataToSpring(testData9);
+        sendDataToSpring(testData10);
+        sendDataToSpring(testData11);
+        sendDataToSpring(testData12);
+        sendDataToSpring(testData13);
+        sendDataToSpring(testData14);
+        sendDataToSpring(testData15);
+        sendDataToSpring(testData16);
+        sendDataToSpring(testData17);
+
+        
+        
+    </script>
+</body>
+</html>
